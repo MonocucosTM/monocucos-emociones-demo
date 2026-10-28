@@ -1,0 +1,134 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MONOCUCOS · Rabia · Revisión</title><style>
+:root{--ink:#283e38;--muted:#65766d;--cream:#fffaf0;--green:#4f806b;--line:#e9e6dc}*{box-sizing:border-box}body{margin:0;background:#e9eee9;color:var(--ink);font-family:Optima,'Trebuchet MS',Arial,sans-serif}button,select{font:inherit;cursor:pointer}header{max-width:1160px;margin:22px auto 12px;padding:0 22px;display:flex;justify-content:space-between;gap:15px;align-items:center}header strong{letter-spacing:.15em}header small{color:#65766d}.shell{max-width:1160px;margin:auto;padding:0 16px 35px}.app{background:var(--cream);border:1px solid #e1e7dd;border-radius:30px;overflow:hidden;min-height:680px;box-shadow:0 20px 65px #37524718}.top{padding:20px 30px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center}.brand-logo{display:block;width:185px;height:auto;max-height:108px;object-fit:contain}@media(max-width:760px){.brand-logo{width:140px;max-height:90px}}.stepnum{font-size:13px;color:var(--muted)}.progress{height:4px;background:#e5e9e0}.bar{height:100%;background:#81aa88;transition:width .3s}.stage{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:38px 6%;min-height:530px;align-items:center}.eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#aa7057;font-weight:bold;margin-bottom:18px}h1{font-size:clamp(32px,4.4vw,58px);line-height:1.12;font-weight:500;margin:0 0 22px}p{font-size:19px;line-height:1.55}.desc{margin-bottom:18px}.question{font-weight:700;font-size:20px}.visual{width:100%;border-radius:24px;overflow:hidden;background:#f4eee8;display:flex;align-items:center;justify-content:center}.visual img{width:100%;height:auto;max-height:480px;object-fit:contain}.choices{display:grid;gap:9px;margin-top:14px}.choice{border:1px solid #d3dfd7;border-radius:16px;background:white;text-align:left;padding:12px 16px;color:var(--ink)}.choice:hover,.choice:focus-visible{border-color:var(--green);background:#edf5ec}.choice.selected{background:#eaf4e9;border:2px solid var(--green)}.feedback{margin-top:16px;padding:15px;border-radius:16px;background:#edf4e8;line-height:1.5}.dialog{white-space:pre-line;font-weight:600}.lesson{margin-top:9px;color:#3d6d58}.controls{display:flex;gap:12px;margin-top:23px;flex-wrap:wrap}.primary,.secondary{padding:13px 24px;border-radius:30px;font-weight:700}.primary{border:0;background:var(--green);color:white}.secondary{border:1px solid #a9c4b5;background:white;color:#376554}.primary:disabled{opacity:.45;cursor:not-allowed}.bottom{border-top:1px solid var(--line);padding:17px 30px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}.dots{letter-spacing:.3em}.overlay{position:fixed;inset:0;background:#1d2030ae;display:flex;justify-content:center;align-items:center;padding:16px;z-index:10}.modal{background:var(--cream);border-radius:28px;width:min(640px,100%);max-height:95vh;overflow:auto;text-align:center;padding:25px 35px 30px;box-shadow:0 20px 55px #0004}.modal img{height:160px;max-width:85%;object-fit:contain}.modal h2{font-size:36px;margin:8px}.modal p{font-size:18px;margin:12px 0}.quote{color:#65488a;font-weight:bold}.hidden{display:none}.closing{font-weight:600;color:#436f61}@media(max-width:750px){.stage{grid-template-columns:1fr;padding:26px 6%;gap:18px}.visual{grid-row:1}.visual img{max-height:300px}h1{font-size:36px}.bottom{gap:8px;flex-wrap:wrap}.modal img{height:130px}.modal{padding:22px}}
+.choice-hint{font-size:14px;color:#687d70;margin:10px 0 12px;line-height:1.4}.choice-hint[hidden]{display:none!important}
+.visual img{display:block;width:100%;max-height:490px;object-fit:contain}.visual{aspect-ratio:16/10}.intro{padding:8px 0 12px}.intro p{max-width:760px}.age{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0}.age button{border:1px solid #b6c9b9;background:white;padding:12px 19px;border-radius:22px}.age button.active{background:#4f806b;color:white}.caption{font-size:13px;color:#65766d;margin:10px 0}.endnote{padding:15px;border-radius:15px;background:#edf4e8;margin-top:18px}.agebadge{color:#65766d;font-size:13px}.top{gap:16px}.visual{align-self:start}@media(max-width:750px){.visual{aspect-ratio:auto}}
+/* Ajustes de presentación: sin alterar los archivos gráficos */
+.stage{grid-template-columns:minmax(0,1fr) minmax(0,1.07fr);gap:34px;padding:38px 5.5%;align-items:center}
+.visual{border-radius:27px;background:transparent;overflow:hidden;align-self:center}
+.visual img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;border-radius:27px}
+#experience .visual{width:100%;box-shadow:0 3px 0 rgba(0,0,0,.025)}
+.character-curtain{position:fixed;inset:0;z-index:50;background:rgba(22,37,34,.72);display:flex;align-items:center;justify-content:center;padding:18px}
+.character-card{width:min(700px,100%);max-height:95vh;overflow:auto;background:#fffaf0;border-radius:28px;padding:28px 32px 30px;text-align:center;box-shadow:0 24px 75px #0005}
+.character-card img{height:min(30vh,245px);max-width:90%;object-fit:contain;display:block;margin:0 auto 8px}
+.character-card h2{font:normal clamp(32px,5vw,48px) Optima,Georgia,serif;margin:4px 0 12px;color:#283e38}
+.character-card p{font-size:18px;line-height:1.52;margin:12px auto;max-width:570px}
+.character-card .primary{margin-top:12px}
+.character-curtain.hidden{display:none}
+@media(max-width:750px){.stage{grid-template-columns:1fr;padding:24px 6%;gap:22px}.visual{grid-row:1}.visual img{max-height:none}.character-card{padding:22px}}
+
+/* MONOCUCOS · Prueba de escala tipográfica unificada — solo Rabia */
+:root{--tipo-titulo:44px;--tipo-narracion:17px;--tipo-pregunta:19px;--tipo-opcion:16px;--tipo-respuesta:16px;--tipo-boton:15px}
+.stage h1{font-size:var(--tipo-titulo);line-height:1.16;letter-spacing:-.018em;margin-bottom:19px}
+.stage .eyebrow{font-size:12px;line-height:1.4;margin-bottom:15px}
+.stage p,.stage .desc{font-size:var(--tipo-narracion);line-height:1.55}
+.stage .question{font-size:var(--tipo-pregunta);line-height:1.36}
+.stage .choice{font-size:var(--tipo-opcion);line-height:1.38}
+.stage .feedback,.stage .feedback .dialog,.stage .feedback .lesson{font-size:var(--tipo-respuesta);line-height:1.5}
+.stage .primary,.stage .secondary{font-size:var(--tipo-boton)}
+@media(max-width:750px){
+ :root{--tipo-titulo:32px;--tipo-narracion:16px;--tipo-pregunta:18px;--tipo-opcion:16px;--tipo-respuesta:15px}
+ .stage h1{line-height:1.18}
+}
+
+/* Prueba reversible: acercamiento óptico exclusivamente en la escena 2.
+   La imagen original está embebida sin alteraciones. */
+#experience[data-scene="2"] .visual{aspect-ratio: 1.56;overflow:hidden;border-radius:27px}
+#experience[data-scene="2"] .visual img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;border-radius:0}
+@media(max-width:750px){#experience[data-scene="2"] .visual{aspect-ratio:1.56}}
+
+/* Revisión visual de las cinco escenas. Los PNG embebidos permanecen intactos.
+   1: composición panorámica íntegra, esencial para el descanso.
+   2: acercamiento previamente aprobado, sin cambios.
+   3: primerísimo plano íntegro, sin ampliación.
+   4 y 5: acercamiento lateral muy suave (aprox. 7 %) para destacar a Rulo,
+   manteniendo nube y personaje completos. Reversible solo por CSS. */
+#experience[data-scene="4"] .visual,
+#experience[data-scene="5"] .visual{aspect-ratio:1.65;overflow:hidden;border-radius:27px}
+#experience[data-scene="4"] .visual img,
+#experience[data-scene="5"] .visual img{width:100%;height:100%;object-fit:cover;object-position:center;border-radius:0}
+@media(max-width:750px){
+ #experience[data-scene="4"] .visual,
+ #experience[data-scene="5"] .visual{aspect-ratio:1.65}
+}
+
+/* Ajuste aprobado: la ilustración mantiene su coordenada vertical al desplegar feedback.
+   Solo distribución; no se modifican imágenes, encuadres ni contenido. */
+@media (min-width:751px){
+  #experience .stage{align-items:start;}
+  #experience .visual{align-self:start;margin-top:98px;}
+}
+@media (max-width:750px){
+  #experience .stage{align-items:start;}
+  #experience .visual{margin-top:0;align-self:stretch;}
+}
+
+/* MONOCUCOS — prueba de pantalla compacta, reversible.
+   Conserva ilustraciones, encuadres, tipografía e interacciones aprobados. */
+body > header{display:none!important}
+.shell{padding:12px 14px 14px}
+.app{min-height:0;border-radius:25px}
+.top{padding:7px 26px;min-height:78px}
+.brand-logo{width:132px;max-height:70px}
+.progress{height:3px}
+.bottom{display:none!important}
+#experience .stage{min-height:0;padding:19px 5.5% 22px;gap:30px;align-items:start}
+#experience .stage h1{margin-bottom:12px}
+#experience .stage .eyebrow{margin-bottom:9px}
+#experience .stage .desc{margin-top:0;margin-bottom:12px}
+#experience .stage .question{margin-top:10px;margin-bottom:12px}
+#experience .choices{gap:7px;margin-top:10px}
+#experience .choice{padding:9px 14px}
+#experience .feedback{margin-top:10px;padding:11px 14px}
+#experience .feedback .lesson{margin-top:5px}
+#experience .controls{margin-top:14px}
+#experience .primary,#experience .secondary{padding:10px 19px}
+@media(min-width:751px){
+  #experience .visual{align-self:start;margin-top:77px}
+}
+@media(max-width:750px){
+  .shell{padding:7px 8px 12px}
+  .top{padding:6px 18px;min-height:62px}
+  .brand-logo{width:112px;max-height:54px}
+  #experience .stage{padding:16px 5% 20px;gap:14px}
+  #experience .visual{margin-top:0}
+}
+
+/* Ajuste fino de altura: escena 3 con respuesta desplegada.
+   Mantiene imágenes, encuadres y tamaños tipográficos aprobados. */
+@media (min-width:751px){
+  #experience[data-scene="3"] .stage{padding-top:13px;padding-bottom:13px}
+  #experience[data-scene="3"] .stage .eyebrow{margin-bottom:6px}
+  #experience[data-scene="3"] .stage h1{margin-bottom:8px}
+  #experience[data-scene="3"] .stage .desc{margin-bottom:8px}
+  #experience[data-scene="3"] .stage .question{margin-top:7px;margin-bottom:8px}
+  #experience[data-scene="3"] .choices{gap:5px;margin-top:7px}
+  #experience[data-scene="3"] .choice{padding-top:7px;padding-bottom:7px}
+  #experience[data-scene="3"] .feedback{margin-top:7px;padding-top:8px;padding-bottom:8px}
+  #experience[data-scene="3"] .controls{margin-top:9px}
+  #experience[data-scene="3"] .visual{margin-top:71px}
+}
+
+/* Ajuste de la pantalla inicial: conservar tipografia e ilustracion. */
+@media (min-width: 761px) {
+  #intro.stage {padding-top:18px;padding-bottom:18px;min-height:0;align-items:center;}
+  #intro .eyebrow {margin-bottom:9px;}
+  #intro h1 {margin-bottom:13px;}
+  #intro p {margin-top:9px;margin-bottom:9px;}
+  #intro .question {margin-top:13px;margin-bottom:12px;}
+  #intro .agebadge {margin-top:9px;margin-bottom:10px;}
+}
+
+/* Ajuste localizado de la escena final: ganar altura sin tocar arte ni tipografia. */
+@media (min-width:751px){
+ #experience[data-scene="5"] .stage{padding-top:12px;padding-bottom:12px}
+ #experience[data-scene="5"] .stage .eyebrow{margin-bottom:5px}
+ #experience[data-scene="5"] .stage h1{margin-bottom:7px}
+ #experience[data-scene="5"] .stage .desc{margin-bottom:7px}
+ #experience[data-scene="5"] .stage .question{margin-top:6px;margin-bottom:7px}
+ #experience[data-scene="5"] .choices{gap:5px;margin-top:6px}
+ #experience[data-scene="5"] .choice{padding-top:7px;padding-bottom:7px}
+ #experience[data-scene="5"] .feedback{margin-top:7px;padding-top:8px;padding-bottom:8px}
+ #experience[data-scene="5"] .controls{margin-top:8px}
+ #experience[data-scene="5"] .visual{margin-top:71px}
+}
+</style></head><body><div id="characterIntro" class="character-curtain" role="dialog" aria-modal="true" aria-labelledby="characterTitle"><div class="character-card"><div class="eyebrow">Conoce a nuestro protagonista</div><img src="rabia_assets/imagen_01_c604098050c9.png" alt="Ilustración original de Rulo"><h2 id="characterTitle">Este es Rulo</h2><p>Rulo es un gallo muy particular: cuando otros gallos despiertan, él se prepara para dormir. ¡Es un gallo nocturno!</p><p>A veces su carácter parece fuerte, especialmente cuando algo interrumpe su descanso. Pero detrás de ese mal genio también hay alguien dispuesto a cuidar a los demás.</p><p>Hoy acompañaremos a Rulo para descubrir qué sucede cuando algo le hace sentir rabia.</p><button class="primary" type="button" onclick="document.getElementById('characterIntro').classList.add('hidden')">Conocer su historia →</button></div></div><header><strong>MONOCUCOS</strong><small>Emociones · Rabia · Versión para revisión pedagógica</small></header><main class="shell"><section class="app"><div class="top"><span class="brand"><img class="brand-logo" src="rabia_assets/imagen_02_da1aea32575e.png" alt="Logotipo MONOCUCOS"></span><span class="stepnum" id="counter">Rulo y el ruido de la rabia</span></div><div class="progress"><div class="bar" id="bar" style="width:0"></div></div><div id="intro" class="stage"><div class="intro"><div class="eyebrow">Una historia para comprender la rabia</div><h1>Rulo y el ruido de la rabia</h1><p>Rulo es un gallo que vive despierto por las noches y descansa durante el día. A veces algo interrumpe lo que necesita, y una nube de hilo que siempre lo acompaña se va oscureciendo.</p><p>En esta historia no necesitamos hacer desaparecer la rabia: aprenderemos a escuchar lo que nos dice y a elegir cómo responder.</p><p class="question">Selecciona una edad para adaptar el acompañamiento:</p><div class="age"><button data-age="4–6" onclick="setAge('4–6')">4–6 años</button><button data-age="7–8" class="active" onclick="setAge('7–8')">7–8 años</button><button data-age="9–10" onclick="setAge('9–10')">9–10 años</button></div><p class="agebadge" id="ageBadge">Edad seleccionada: 7–8</p><button class="primary" onclick="begin()">Comenzar →</button></div><div class="visual"><img src="rabia_assets/imagen_03_f42681e13a14.png" alt="Rulo descansando bajo una nube de hilo"></div></div><div id="experience" class="hidden"><div class="stage" id="stage"><div><div class="eyebrow" id="eyebrow"></div><h1 id="title"></h1><p class="desc" id="story"></p><p class="question" id="question"></p><div class="choices" id="choices"></div><div class="feedback hidden" id="feedback" aria-live="polite"></div><div class="controls"><button class="secondary" id="prev" onclick="prev()">← Anterior</button><button class="primary" id="next" onclick="next()">Siguiente escena →</button></div></div><div class="visual"><img id="art" alt=""></div></div></div><div class="bottom"><span>MONOCUCOS · Un mundo para todos, donde todos somos uno.</span><span>Prototipo para revisión · Rabia</span></div></section></main><script>const stages=[{"title": "El ruido aparece", "sub": "Reconocer lo que sentimos", "story": "Rulo es un gallo nocturno. Mientras otros están despiertos, él necesita dormir. Hoy, un ruido interrumpe su descanso. Encima de Rulo, la pequeña nube que siempre lo acompaña comienza a cambiar de tono. Rulo nota que algo le molesta.", "q": "¿Qué podría estar despertando la rabia de Rulo?", "options": [["Algo interrumpe lo que necesita hacer.", "Rulo: «Necesito descansar. Que algo me interrumpa puede molestarme».", "A veces la rabia aparece cuando una necesidad importante se ve interrumpida."], ["Siente que nadie comprende su descanso.", "Rulo: «Para mí dormir de día es importante, aunque otros no lo entiendan».", "Las personas no siempre necesitamos lo mismo. Escuchar ayuda a comprender."], ["Quizá está cansado.", "Rulo: «Cuando estoy cansado, algunas cosas me molestan más».", "El cansancio puede cambiar cómo vivimos una situación."]]}, {"title": "El ruido crece", "sub": "Escuchar las señales", "story": "El ruido continúa. Rulo permanece de pie. La nube se oscurece y sus hilos se aprietan. Por dentro, quizá también empieza a sentir que algo se enreda. Todavía puede detenerse a descubrir qué está ocurriendo.", "q": "¿Cómo podría darse cuenta Rulo de que su rabia está creciendo?", "options": [["Notando lo que siente en su cuerpo.", "Rulo: «Tal vez mis patas están tensas o mi respiración cambió».", "El cuerpo puede darnos pistas antes de que actuemos."], ["Prestando atención a lo que piensa.", "Rulo: «Hay una idea que vuelve una y otra vez: necesito descansar».", "Los pensamientos repetidos también pueden ser señales."], ["Reconociendo las ganas de reaccionar enseguida.", "Rulo: «Tengo ganas de hacer algo ya mismo».", "Sentir un impulso no significa que tengamos que seguirlo."]]}, {"title": "Cuando el ruido lo ocupa todo", "sub": "Sentir no es lo mismo que actuar", "story": "Ahora la nube es oscura, como una tormenta de hilo. Los sonidos y las molestias parecen llenar todo el espacio. Rulo siente mucha rabia. Esa emoción merece ser escuchada, pero no tiene que decidir por él.", "q": "Rulo siente ganas de reaccionar de inmediato. ¿Qué puede recordar?", "options": [["Que sentir rabia está permitido.", "Rulo: «Puedo estar muy molesto. Lo que siento importa».", "No necesitamos avergonzarnos de sentir rabia."], ["Que una emoción y una acción son cosas distintas.", "Rulo: «Puedo tener ganas de gritar y elegir qué hago después».", "Podemos reconocer el impulso sin lastimar."], ["Que puede buscar un momento seguro antes de responder.", "Rulo: «No tengo que resolverlo todo justo ahora».", "Una pausa puede abrir otras posibilidades, cuando es posible tomarla."]]}, {"title": "Rulo descubre qué necesita", "sub": "Encontrar un poco de espacio", "story": "El ruido quizá no se ha ido. Rulo se sienta y comienza a notar qué necesita. La nube sigue allí, pero ya no está tan oscura. No se trata de obligarlo a estar tranquilo: se trata de encontrar una forma de cuidarse y cuidar a los demás.", "q": "¿Qué podría ayudar a Rulo en este momento?", "options": [["Decir con claridad lo que necesita.", "Rulo: «Necesito descansar. Por favor, bajen el ruido».", "Expresar un límite con respeto también es cuidarnos."], ["Tomar distancia o hacer una pausa, si puede.", "Rulo: «Voy a darme un momento antes de responder».", "Una pausa puede ayudar sin negar lo que sentimos."], ["Pedir apoyo para encontrar una solución.", "Rulo: «¿Me ayudas a encontrar un lugar más tranquilo?».", "Pedir ayuda es una forma valiosa de actuar."]]}, {"title": "El ruido sigue, Rulo elige", "sub": "Responder sin negar la emoción", "story": "Rulo vuelve a ponerse de pie. La nube que lo acompaña es ahora mucho más clara, aunque no ha desaparecido. Quizá el ruido siga allí. Rulo comprende que puede sentir rabia, expresar lo que necesita y decidir cómo responder.", "q": "¿Qué cosas hacen ruido dentro de ti? Puedes elegir una o pasar.", "options": [["Cuando algo no sale como esperaba.", "Rulo: «A veces las cosas no salen como queremos».", "Podemos sentir frustración y buscar qué necesitamos."], ["Cuando no me escuchan o no respetan mis límites.", "Rulo: «Que me escuchen y respeten mis límites es importante».", "Podemos pedir respeto sin hacer daño."], ["Cuando algo me parece injusto.", "Rulo: «Hay cosas que necesitamos cambiar, no simplemente soportar».", "La rabia también puede señalar que algo requiere atención."], ["Cuando estoy cansado o no sé explicar qué me pasa.", "Rulo: «No siempre entiendo mi ruido a la primera».", "Podemos darnos tiempo y pedir compañía."], ["Mi ruido es diferente.", "Rulo: «Cada quien tiene sus propios ruidos».", "No hace falta contarlo si no quieres."], ["Prefiero no responder.", "Rulo: «Está bien. No tienes que contar nada».", "Participar es una elección, no una obligación."]]}];const images=["rabia_assets/imagen_03_f42681e13a14.png", "rabia_assets/imagen_04_0e9bc92ae851.png", "rabia_assets/imagen_05_25ea229abdc9.png", "rabia_assets/imagen_06_45ee18b2ce60.png", "rabia_assets/imagen_07_64e8b16c7450.png"];let idx=0,age='7–8',selected={};const $=id=>document.getElementById(id);function safe(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}function setAge(v){age=v;document.querySelectorAll('.age button').forEach(b=>b.classList.toggle('active',b.dataset.age===v));$('ageBadge').textContent='Edad seleccionada: '+v;}function begin(){ $('intro').classList.add('hidden');$('experience').classList.remove('hidden');render()}function render(){const s=stages[idx];$('experience').dataset.scene=String(idx+1);$('counter').textContent='Escena '+(idx+1)+' de 5';$('bar').style.width=((idx+1)*20)+'%';$('eyebrow').textContent=s.sub;$('title').textContent=s.title;$('story').textContent=s.story;$('question').textContent=s.q;$('art').src=images[idx];$('art').alt='Ilustración aprobada de Rulo, escena '+(idx+1);$('choices').innerHTML='';s.options.forEach((o,j)=>{let b=document.createElement('button');b.className='choice'+(selected[idx]===j?' selected':'');b.textContent=o[0];b.onclick=()=>choose(j);$('choices').append(b)});$('feedback').classList.add('hidden');if(selected[idx]!==undefined)showFeedback(selected[idx]);$('prev').disabled=idx===0;$('next').textContent=idx===4?'Volver a empezar':'Siguiente escena →';$('next').disabled=selected[idx]===undefined&&idx!==4;$('stage').scrollIntoView({behavior:'smooth',block:'start'})}function showFeedback(j){let o=stages[idx].options[j];$('feedback').innerHTML='<div class="dialog">'+safe(o[1])+'</div><div class="lesson">'+safe(o[2])+'</div>';$('feedback').classList.remove('hidden')}function choose(j){selected[idx]=j;document.querySelectorAll('.choice').forEach((b,k)=>b.classList.toggle('selected',k===j));showFeedback(j);$('next').disabled=false}function next(){if(idx===4){idx=0;selected={};$('experience').classList.add('hidden');$('intro').classList.remove('hidden');$('characterIntro').classList.remove('hidden');$('counter').textContent='Rulo y el ruido de la rabia';$('bar').style.width='0%';setAge('7–8');window.scrollTo({top:0,behavior:'instant'});return}idx++;render()}function prev(){if(idx>0){idx--;render()}}</script></body></html>
