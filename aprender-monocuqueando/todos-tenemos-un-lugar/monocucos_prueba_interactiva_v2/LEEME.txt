@@ -1,0 +1,3 @@
+MONOCUCOS — Prueba interactiva V2
+Abre index.html en Safari. Pulsa un símbolo + para mostrar una tarjeta sobre el escenario. Ciérrala con ×, Escape o «Volver al escenario».
+Las imágenes PNG se copiaron sin modificaciones desde V1. No se ha publicado en GitHub.

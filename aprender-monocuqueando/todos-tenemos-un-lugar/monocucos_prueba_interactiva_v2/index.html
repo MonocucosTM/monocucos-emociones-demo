@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MONOCUCOS · Todos tenemos un lugar · Prueba técnica</title>
+<style>
+:root{font-family:Optima,Palatino,'Trebuchet MS',sans-serif;color:#27372f;background:#f8f6ef}
+*{box-sizing:border-box}body{margin:0}main{max-width:1260px;margin:auto;padding:20px 16px 36px}header{text-align:center;margin-bottom:16px}h1{font-weight:500;font-size:clamp(1.55rem,3vw,2.4rem);margin:4px 0 8px}p{margin:0;color:#59665c;line-height:1.45}.eyebrow{font-size:.75rem;letter-spacing:.14em;font-weight:700;color:#68766b}.scene-wrap{position:relative;width:100%;aspect-ratio:3/2;overflow:hidden;border-radius:20px;background:#d8e8e4;box-shadow:0 12px 35px #1c3e3022;isolation:isolate}.layer{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;pointer-events:none;user-select:none}.hotspot{position:absolute;border:2px solid transparent;border-radius:45%;background:transparent;cursor:pointer;touch-action:manipulation;padding:0;z-index:5}.hotspot:hover,.hotspot:focus-visible,.hotspot[aria-pressed="true"]{outline:3px solid #f3bf38;outline-offset:2px;background:#fff8cf22}.hotspot:focus-visible{outline-width:4px}.hotspot::after{content:'+';position:absolute;right:0;bottom:0;transform:translate(10%,15%);display:grid;place-items:center;width:clamp(22px,3vw,38px);aspect-ratio:1;border-radius:50%;background:#fff9e9;color:#344e43;font-size:clamp(16px,2vw,24px);font-weight:700;border:2px solid #e9bd5c;box-shadow:0 2px 8px #263b3033}.hotspot[aria-pressed="true"]::after{content:'✓'}
+/* Las coordenadas son porcentajes del lienzo original 1536×1024. */
+#issa{left:1.1%;top:25.0%;width:16%;height:21%}#rulo{left:38.5%;top:11.5%;width:14%;height:19%}#rowen{left:72.5%;top:48%;width:23%;height:16%}
+.panel{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:16px auto 0;max-width:950px;min-height:80px;border:1px solid #d7dfd5;background:#fff;border-radius:16px;padding:16px 20px}.panel strong{font-size:1.25rem;font-weight:600}.panel p{margin-top:4px}.controls{display:flex;gap:8px;flex-wrap:wrap}.controls button{font:inherit;padding:10px 15px;border:1px solid #9aaea2;background:#fff;border-radius:99px;color:#31483b;cursor:pointer}.controls button:hover,.controls button:focus-visible{background:#e9f1e9}.note{font-size:.84rem;text-align:center;margin-top:14px}.testline{font-size:.82rem;text-align:center;margin-top:8px;color:#66776b}
+@media(max-width:650px){main{padding:12px 8px 24px}.scene-wrap{border-radius:10px}.hotspot::after{width:22px;font-size:15px}.panel{margin-top:12px;padding:14px}.controls{width:100%}.controls button{flex:1}.note{padding:0 8px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important}}
+
+/* Tarjeta superpuesta: siempre visible sin desplazar el escenario. */
+.character-card{position:absolute;z-index:10;left:50%;bottom:3%;transform:translateX(-50%);width:min(88%,440px);background:#fffdf4f2;color:#27372f;border:2px solid #e9bd5c;border-radius:16px;box-shadow:0 10px 30px #1c3e3066;padding:16px 48px 16px 18px;backdrop-filter:blur(6px)}
+.character-card[hidden]{display:none}.character-card h2{font-size:clamp(1rem,2vw,1.4rem);margin:0 0 5px;font-weight:600}.character-card p{font-size:clamp(.83rem,1.5vw,1rem);color:#405448}.close-card{position:absolute;right:9px;top:9px;width:36px;height:36px;border-radius:50%;border:1px solid #a5b5a5;background:#fff;color:#27372f;font-size:1.5rem;cursor:pointer}.close-card:focus-visible{outline:3px solid #bd8c21}
+@media(max-width:650px){.character-card{bottom:2%;padding:10px 40px 10px 12px;width:94%;border-radius:11px}.close-card{width:30px;height:30px;right:5px;top:5px}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="eyebrow">MONOCUCOS · APRENDER MONOCUQUEANDO</div><h1>Todos tenemos un lugar</h1><p>Prueba técnica de tarjetas · Toca los símbolos +</p></header>
+<div class="scene-wrap" id="scene" aria-label="Escenario de seis islas con personajes seleccionables">
+<img class="layer" src="assets/escenario-maestro.png" alt="Seis islas conectadas por puentes de hilo" draggable="false">
+<img class="layer" src="assets/rowen.png" alt="" draggable="false">
+<img class="layer" src="assets/rulo.png" alt="" draggable="false">
+<img class="layer" src="assets/issa-uli.png" alt="" draggable="false">
+<button class="hotspot" id="issa" data-person="issa" aria-label="Seleccionar a Issa y Uli, en El Mirador" aria-pressed="false"></button>
+<button class="hotspot" id="rulo" data-person="rulo" aria-label="Seleccionar a Rulo, en el Rincón Tranquilo" aria-pressed="false"></button>
+<button class="hotspot" id="rowen" data-person="rowen" aria-label="Seleccionar a Rowen, en la isla del agua" aria-pressed="false"></button>
+<section class="character-card" id="character-card" aria-live="polite" aria-atomic="true" hidden><h2 id="card-name"></h2><p id="card-description"></p><button class="close-card" id="close-card" type="button" aria-label="Cerrar tarjeta">×</button></section>
+</div>
+<section class="panel" aria-live="polite" aria-atomic="true"><div><strong id="name">Elige un personaje</strong><p id="description">Selecciona uno de los tres puntos para comprobar la interacción.</p></div><div class="controls"><button id="clear" type="button">Volver al escenario</button></div></section>
+<p class="note">Esta es una prueba de interacción y adaptación visual, no la experiencia educativa definitiva. Las ilustraciones no se han modificado.</p>
+<p class="testline" id="testline">Lienzo de referencia: 1536 × 1024 · Capas independientes</p>
+</main>
+<script>
+(function(){
+'use strict';
+var people={issa:{name:'Issa y Uli',description:'El Mirador · Dos maneras diferentes de observar el mundo.'},rulo:{name:'Rulo',description:'Rincón Tranquilo · Una manera distinta de disfrutar la calma.'},rowen:{name:'Rowen',description:'Isla del agua · Un personaje por descubrir.'}};
+var buttons=[].slice.call(document.querySelectorAll('.hotspot'));
+var title=document.getElementById('name'),description=document.getElementById('description');var card=document.getElementById('character-card'),cardName=document.getElementById('card-name'),cardDescription=document.getElementById('card-description');
+function select(id){buttons.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.person===id))});title.textContent=id?people[id].name:'Elige un personaje';description.textContent=id?people[id].description:'Selecciona uno de los tres puntos para comprobar la interacción.';card.hidden=!id;if(id){cardName.textContent=people[id].name;cardDescription.textContent=people[id].description}}
+buttons.forEach(function(b){b.addEventListener('click',function(){select(b.dataset.person)})});
+document.getElementById('clear').addEventListener('click',function(){select(null)});document.getElementById('close-card').addEventListener('click',function(){select(null)});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!card.hidden)select(null)});
+var scene=document.getElementById('scene');
+function check(){var r=scene.getBoundingClientRect();document.getElementById('testline').textContent='Escenario visible: '+Math.round(r.width)+' × '+Math.round(r.height)+' px · Proporción 3:2 · Capas alineadas por porcentaje'}
+window.addEventListener('resize',check);check();
+})();
+</script>
+</body>
+</html>
