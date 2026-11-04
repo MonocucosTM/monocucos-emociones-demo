@@ -1,0 +1,46 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>MONOCUCOS · La Isla del Agua · El hilo que nos une</title><style>
+
+:root{font-family:Optima,'Palatino Linotype',Georgia,serif;color:#413747;background:#f7f2ef}*{box-sizing:border-box}body{margin:0}.app{max-width:1180px;margin:auto;padding:14px 18px 35px}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:6px 4px 16px}.brand{font-size:14px;letter-spacing:.08em;font-weight:700}.sub{font-size:12px;color:#756978}.dots{display:flex;gap:9px;align-items:center}.dot{width:11px;height:11px;border:0;border-radius:100%;background:#d9d1d9;cursor:pointer;padding:0}.dot.on{background:#c79b31}.dot:last-child{width:17px;height:17px;border:2px solid #c79b31}.dot:last-child.on{background:#c79b31}.ghost,.primary{font:inherit;border-radius:22px;padding:10px 16px;cursor:pointer}.ghost{border:1px solid #d8cbd1;background:#fff9;color:#413747}.primary{border:0;background:#bd8f31;color:white;font-weight:700}.section-label{font-size:13px;color:#867279;text-align:center;margin:0 0 8px}.stage{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px #4d344016}.stage iframe{width:100%;height:820px;border:0;display:block}
+body{background:#f7f2ef}.app{max-width:1000px}.panel{background:#fff;border-radius:22px;padding:clamp(22px,4vw,44px);box-shadow:0 8px 30px #4d344016}h1{font-size:clamp(29px,4vw,42px);margin:4px 0 12px}h2{font-size:clamp(21px,3vw,28px)}p{line-height:1.6;font-size:18px}.kicker{color:#867279;font-size:13px;letter-spacing:.04em}.choice{display:block;width:100%;text-align:left;border:1px solid #d8cbd1;border-radius:15px;padding:18px;margin:12px 0;background:white;font:inherit;font-size:18px;color:#413747;cursor:pointer}.choice.selected{border-color:#c79b31;background:#fbf2db}.question{font-weight:600}.reflection{margin-top:18px;border-top:1px solid #e8e1e4;padding-top:20px}.pending{font-size:15px;color:#756978}.end{border-top:1px solid #e8e1e4;margin-top:25px;padding-top:20px}.age{display:flex;gap:9px;flex-wrap:wrap}.age button{border:1px solid #d8cbd1;background:white;border-radius:20px;padding:10px 18px;font:inherit;cursor:pointer}.age button.active{background:#f6e7b9;border-color:#c79b31}.nav{justify-content:flex-end}.reflection .age{margin:12px 0 18px}.reflection #age-reflection{margin:8px 0 20px}.reflection .ghost{margin-top:6px}@media(max-width:650px){.top{align-items:flex-start}.panel{padding:22px 17px}.choice{padding:15px;font-size:17px}h2{font-size:23px}}button:focus-visible{outline:3px solid #c79b31;outline-offset:2px}[hidden]{display:none!important}
+</style></head><body><main class="app"><header class="top"><div><div class="brand">MONOCUCOS · LA ISLA DEL AGUA</div><div class="sub">El hilo que nos une · Prevención del bullying</div></div><span class="kicker">Momento 5 de 5</span></header><section class="panel"><p class="kicker">UN APRENDIZAJE QUE VIAJA</p><h1>El hilo que nos une</h1><p class="kicker">PARA PENSAR JUNTOS</p><h2>¿Qué podemos hacer cuando alguien es rechazado o tratado mal por ser diferente?</h2><div id="choices"><button class="choice" data-choice="0" aria-pressed="false"><b>A.</b> Acercarnos y escuchar cómo se siente.</button><button class="choice" data-choice="1" aria-pressed="false"><b>B.</b> No participar en las burlas ni dejar que parezcan normales.</button><button class="choice" data-choice="2" aria-pressed="false"><b>C.</b> Buscar ayuda de un adulto de confianza cuando alguien está siendo lastimado.</button></div><section class="reflection" id="reflection" hidden aria-live="polite"><h2>Para pensar juntos</h2><p class="question" id="repregunta"></p><p id="age-label" class="kicker">Reflexión para 6–8 años</p><p id="age-reflection"></p><div class="age" id="ages" aria-label="Seleccionar edad"><button data-age="0" aria-pressed="false">4–5 años</button><button data-age="1" class="active" aria-pressed="true">6–8 años</button><button data-age="2" aria-pressed="false">9–10 años</button></div><button class="ghost" id="reset">Volver a elegir</button></section><section class="end"><h2>Un aprendizaje que viaja</h2><p>No necesitamos ser iguales para estar unidos. Cada vez que escuchamos, respetamos y cuidamos a alguien, tejemos un mundo donde todos podemos tener un lugar.</p><p class="pending">Prueba funcional · Identidad visual definitiva pendiente de unificación entre las seis islas.</p></section></section></main><script>
+const questions=[
+"¿Cómo podemos acompañar a alguien sin decidir por él lo que necesita?",
+"¿Por qué reírnos o quedarnos callados puede hacer que alguien se sienta todavía más solo?",
+"¿Por qué pedir ayuda también puede ser una manera de cuidar a los demás?"
+];
+// Cada fila corresponde a una opción (A, B, C); columnas: 4–5, 6–8, 9–10.
+const reflections=[
+[
+"Si alguien está triste porque lo dejan por fuera, podemos acercarnos y preguntarle cómo se siente. Escucharlo y preguntarle si quiere nuestra compañía es una forma de cuidarlo.",
+"Cuando alguien es rechazado, podemos acercarnos, escucharlo y preguntarle qué necesita. Acompañar no significa decidir por esa persona, sino respetar cómo se siente y cómo quiere recibir nuestra ayuda.",
+"Cuando alguien es rechazado, no siempre sabemos qué necesita. Escucharlo y preguntarle cómo podemos ayudar demuestra respeto por sus sentimientos y sus decisiones."
+],
+[
+"Cuando se burlan de alguien, no tenemos que reírnos ni participar. Podemos mostrarle que no está solo y contarle a un adulto de confianza lo que está pasando.",
+"A veces las burlas continúan porque otros se ríen o hacen como si no pasara nada. No participar, apoyar a quien está siendo lastimado y buscar ayuda puede ayudar a detenerlas.",
+"Las burlas y la exclusión pueden continuar cuando los demás las celebran o las consideran normales. No participar, mostrar apoyo y buscar ayuda cuando sea necesario puede cambiar lo que ocurre."
+],
+[
+"Si alguien está siendo lastimado, podemos contárselo a un adulto de confianza. No tenemos que arreglarlo solos. Pedir ayuda también es cuidar.",
+"Cuando alguien sufre burlas o maltrato, no siempre podemos detenerlo por nuestra cuenta. Buscar a un adulto de confianza es una manera de proteger a esa persona y encontrar ayuda sin ponernos en peligro.",
+"No tenemos que resolver solos una situación de maltrato. Contársela a un adulto de confianza permite buscar una solución más segura y evitar que alguien siga siendo lastimado."
+]
+];
+let selected=null, age=1;
+const buttons=[...document.querySelectorAll('[data-choice]')];
+const panel=document.getElementById('reflection');
+function render(){
+  buttons.forEach((b,i)=>{b.classList.toggle('selected',i===selected);b.setAttribute('aria-pressed',String(i===selected));});
+  document.querySelectorAll('[data-age]').forEach(b=>{const on=Number(b.dataset.age)===age;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));});
+  panel.hidden=selected===null;
+  if(selected!==null){
+    document.getElementById('repregunta').textContent=questions[selected];
+    document.getElementById('age-reflection').textContent=reflections[selected][age];
+    document.getElementById('age-label').textContent='Reflexión para '+['4–5','6–8','9–10'][age]+' años';
+  }
+}
+buttons.forEach((b,i)=>b.addEventListener('click',()=>{selected=i;render();}));
+document.querySelectorAll('[data-age]').forEach(b=>b.addEventListener('click',()=>{age=Number(b.dataset.age);render();}));
+document.getElementById('reset').addEventListener('click',()=>{selected=null;render();document.getElementById('choices').scrollIntoView({behavior:'smooth',block:'nearest'});});
+render();
+</script></body></html>
