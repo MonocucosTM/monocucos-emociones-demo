@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MONOCUCOS · Un espacio para crear · Recorrido de prueba</title>
 <style>html,body{margin:0;height:100%;overflow:hidden;background:#f8f6ef}iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.back{position:fixed;z-index:20;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;border:1px solid #c9ad76;border-radius:28px;padding:10px 15px;background:rgba(255,253,244,.96);color:#304638;text-decoration:none;font:600 14px system-ui,-apple-system,sans-serif;box-shadow:0 2px 12px #0002}.back:focus-visible{outline:3px solid #b78a24;outline-offset:3px}@media(max-width:600px){.back{top:8px;left:8px;padding:8px 12px;font-size:12px}}</style></head><body><iframe title="Un espacio para crear · Ali y Luna" src="../un-espacio-para-crear/" allowfullscreen></iframe><script>
-const frame=document.querySelector('iframe'),fallback=document.querySelector('.fallback');
+const frame=document.querySelector('iframe');
 frame.addEventListener('load',()=>{
  try{
   const d=frame.contentDocument;
   if(!d || !d.getElementById('next'))return;
   const header=d.querySelector('header.top');
   if(header&&!d.getElementById('returnIslands')){
-   const a=d.createElement('a');a.id='returnIslands';a.href='/monocucos-emociones-demo/prueba-islas-v9/index-cuatro-prueba.html';
+   const a=d.createElement('a');a.id='returnIslands';a.href='/monocucos-emociones-demo/prueba-islas-v9/';
    a.textContent='← Volver al mapa de las islas';
    a.style.cssText='display:block;margin:0 0 14px;color:#315740;text-decoration:underline;text-underline-offset:3px;font:15px Optima,Palatino,serif';
    header.insertAdjacentElement('afterend',a);
@@ -20,7 +20,7 @@ frame.addEventListener('load',()=>{
    if(next.textContent!==desired)next.textContent=desired;
   };
   new MutationObserver(sync).observe(dots,{childList:true,subtree:true,attributes:true,attributeFilter:['class']});
-  sync();fallback.hidden=true;
- }catch(e){fallback.hidden=false}
+  sync();
+ }catch(e){console.warn('No se pudo integrar la navegación',e)}
 });
 </script></body></html>
