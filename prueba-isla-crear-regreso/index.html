@@ -8,7 +8,7 @@ frame.addEventListener('load',()=>{
   if(!d || !d.getElementById('next'))return;
   const header=d.querySelector('header.top');
   if(header&&!d.getElementById('returnIslands')){
-   const a=d.createElement('a');a.id='returnIslands';a.href='/monocucos-emociones-demo/prueba-islas-v9/';
+   const a=d.createElement('a');a.id='returnIslands';a.href='/monocucos-emociones-demo/prueba-islas-v9/?isla=crear';
    a.textContent='← Volver al mapa de las islas';
    a.style.cssText='display:block;margin:0 0 14px;color:#315740;text-decoration:underline;text-underline-offset:3px;font:15px Optima,Palatino,serif';
    header.insertAdjacentElement('afterend',a);
