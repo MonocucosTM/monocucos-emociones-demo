@@ -1,0 +1,7 @@
+MONOCUCOS · La Isla del Agua · Integración de prueba
+
+Abrir index.html en Safari después de descomprimir el ZIP. Mantener todos los archivos juntos.
+
+Momentos 1 y 2: archivos de recuperación/reconstrucción; las reflexiones del Momento 1 fueron aprobadas por el usuario. Las del Momento 2 aún no han recibido aprobación explícita.
+Momentos 3, 4 y 5: copias sin cambios de los HTML previamente existentes.
+La navegación exterior permite pasar entre momentos, sin alterar el código interior. No hay avance automático al terminar cada uno.
